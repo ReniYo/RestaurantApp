@@ -24,6 +24,10 @@ document.addEventListener("click", function(e){
     else if(e.target.id === "modal-close-btn"){
         modal.style.display = 'none'
     }
+    else if(e.target.id === "confirm-order-msg"){
+        document.getElementById("confirm-order-msg").style.display = "none"
+        renderListMenu()
+    }
 })
 
 
@@ -60,9 +64,16 @@ function completeOrderModal(){
         const fullName = modalFormData.get("fullName")
         modal.style.display = "none"
         document.getElementById("purchase").innerHTML = `
-        <h4 class="confirm-order-msg">Thanks, ${fullName}! Your order is on its way!</h4>
+        <h4 id="confirm-order-msg" class="confirm-order-msg">Thanks, ${fullName}! Your order is on its way!</h4>
         `
     })
+     purchasedItemsArray = []
+     purchasedItems = ``
+     totalPrice = 0
+    
+   
+    
+     
 }
 
 
